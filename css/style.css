@@ -1,0 +1,136 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-size: 100%; }
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 5em;
+  font-weight: 300;
+  letter-spacing: 0.125em;
+  text-transform: uppercase; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #43cbbb url("../img/valley/sky.png") no-repeat;
+  background-position: top center; }
+
+div.wrapper {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px;
+  height: 1000px; }
+
+#text-wrapper {
+  position: relative;
+  margin: 32px auto 0 auto;
+  width: 100%;
+  min-height: 400px; }
+
+#ThreeD-1, #ThreeD-2 {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 120px;
+  text-align: center; }
+
+#ThreeD-1 {
+  top: 0; }
+
+#ThreeD-2 {
+  top: 120px; }
+
+#valley-wrapper {
+  position: relative;
+  display: block; }
+
+.valley {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 1025px; }
+
+#valley-1 {
+  background: url("../img/valley/valley-1f.png") no-repeat; }
+
+#valley-2 {
+  background: url("../img/valley/valley-2.png") no-repeat;
+  opacity: 0.9; }
+
+#valley-3 {
+  background: url("../img/valley/valley-3.png") no-repeat;
+  opacity: 0.8; }
+
+#valley-4 {
+  background: url("../img/valley/valley-4.png") no-repeat;
+  opacity: 0.7; }
+
+#valley-5 {
+  background: url("../img/valley/valley-5.png") no-repeat;
+  opacity: 0.6; }
+
+#valley-6 {
+  background: url("../img/valley/valley-6b.png") no-repeat;
+  opacity: 0.5; }
+
+#valley-1, #valley-2, #valley-3, #valley-4, #valley-5, #valley-6 {
+  position: absolute;
+  background-size: cover; }
+
+#content-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  background: #2b3d42; }

@@ -1,0 +1,112 @@
+// layout.scss
+
+html, body
+{
+	margin: 0;
+	padding: 0;
+	background: #43cbbb url('../img/valley/sky.png') no-repeat;
+	background-position: top center;
+}
+
+div.wrapper
+{
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 1200px;
+	height: 1000px;
+}
+
+#text-wrapper
+{
+	position: relative;
+	margin: 32px auto 0 auto;
+	width: 100%;
+	min-height: 400px;
+}
+
+#ThreeD-1, #ThreeD-2
+{
+	margin: 0;
+	padding: 0;
+	display: block;
+	width: 100%;
+	max-width: 1200px;
+	max-height: 120px;
+	//border: 1px solid gold;
+	text-align: center;
+	//z-index: 999;
+}
+
+#ThreeD-1 
+{
+	top: 0;
+}
+
+#ThreeD-2
+{
+	top: 120px;
+}
+
+
+
+#valley-wrapper
+{
+	position: relative;
+	display: block;
+}
+
+.valley {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+	max-height: 1025px;
+}
+
+#valley-1 {
+	//bottom: 0;
+	background: url('../img/valley/valley-1f.png') no-repeat;
+}
+#valley-2 {
+	//bottom: 0;
+	background: url('../img/valley/valley-2.png') no-repeat;
+	opacity: 0.9;
+}
+#valley-3 {
+	//bottom: 0;
+	background: url('../img/valley/valley-3.png') no-repeat;
+	opacity: 0.8;
+}
+#valley-4 {
+	//bottom: 0;
+	background: url('../img/valley/valley-4.png') no-repeat;
+	opacity: 0.7;
+}
+#valley-5 {
+	//bottom: 0;
+	background: url('../img/valley/valley-5.png') no-repeat;
+	opacity: 0.6;
+}
+#valley-6 {
+	//bottom: 0;
+	background: url('../img/valley/valley-6b.png') no-repeat;
+	opacity: 0.5;
+}
+
+#valley-1, #valley-2, #valley-3, #valley-4, #valley-5, #valley-6   {
+	position: absolute;
+	//background-position: bottom center;
+	background-size: cover;
+	//background-size: 100% 100%;
+}
+
+
+#content-wrapper
+{
+	position: relative;
+	width: 100%;
+	min-height: 480px;
+	background: #2b3d42;
+}
+
+
