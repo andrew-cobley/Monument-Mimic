@@ -119,9 +119,44 @@ div.wrapper
 #content-wrapper
 {
 	position: relative;
-	width: 100%;
-	min-height: 480px;
 	background: #2b3d42;
+
+	header, main, footer
+	{
+		margin: 0 auto;
+		max-width: 540px;
+		text-align: center;
+		color: $color-light;	
+	}
+	header
+	{
+		text-align: center;
+	}
+	main
+	{
+		padding: 1em;
+		text-align: justify;	
+	}
+	main:hover p a {
+		color: $color-accent;
+	}
+	footer
+	{
+		padding: 1em 0;
+		ul {
+			margin: 0 auto;
+			padding: 1em 0 2em 0;
+			list-style-type: none;
+			text-align: center;
+			li {
+				display: inline;
+				padding: 0 1em;
+			}
+		}
+	}
+
 }
+
+
 
 

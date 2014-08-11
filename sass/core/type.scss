@@ -1,15 +1,116 @@
 // type.scss
 
+$color-light: rgba(240,240,240,0.9);
+$color-accent: rgba(67,203,187,0.9); // #43cbbb
+
+@function em($target, $context: 16) {
+	@return ($target / $context) * 1em;
+}
+
 body
 {
 	font-size: 100%;
 }
 
-h1
+a, a:visited {
+	color: $color-light;
+	text-decoration: none;
+}
+
+#effects-wrapper
 {
-	font-family: 'Lato', sans-serif;
-	font-size: 5em;
-	font-weight: 300;
-	letter-spacing: 0.125em;
-	text-transform: uppercase;
+	h1
+	{
+		font-family: 'Lato', sans-serif;
+		font-size: 5em;
+		font-weight: 300;
+		letter-spacing: 0.125em;
+		text-transform: uppercase;
+	}
+}
+
+#content-wrapper
+{
+	color: $color-light;
+	h1,h2,span.pre-title,a.button,a.button:visited, span.legal
+	{
+		margin: 0 auto;
+		font-family: 'Roboto Slab', serif;
+		text-transform: uppercase;
+	}
+	span.sub-intro, p {
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+	}
+	h1 {
+		$size: 28;
+		font-size: em($size);
+		font-weight: 400;
+		line-height: em($size * 1);
+		letter-spacing: em($size / 4.6666666667);
+	}
+	h2 {
+		$size: 16;
+		font-size: em($size);
+		font-weight: 300;
+		line-height: em($size * 2);
+		letter-spacing: em($size / 4);
+		max-width: em($size * 20);
+	}
+	span.pre-title, a.button, a.button:visited {
+		$size: 14;
+		font-size: em($size);
+		font-weight: 300;
+		letter-spacing: em($size / 4);
+	}
+	span.pre-title {
+		$size: 14;
+		line-height: em($size * 2);
+	}
+	span.sub-intro {
+		$size: 10;
+		font-size: em($size);
+		font-weight: 300;
+		line-height: em($size * 5);
+		letter-spacing: em($size / 5);
+		text-transform: uppercase;
+	}
+	a.button, a.button:visited {
+		margin: 16px auto;
+		padding: 5px;
+		width: 6em;
+		height: 6em;
+		line-height: 6em;
+		display: block;
+		border-radius: 50%;
+		border: 1px solid $color-light;
+		transition: background 1s;
+	}
+	a.button:hover {
+		background: $color-accent;
+	}
+	p {
+		margin-bottom: 1em;
+		$size: 16;
+		font-size: em($size);
+		font-weight: 300;
+		line-height: em($size * 1.5);
+		letter-spacing: em($size / $size);
+		word-spacing: em($size * 0.125);
+		a, a:visited {
+			//text-decoration: underline;
+			font-weight: 400;
+			transition: color 1s;
+		}
+		a:hover {
+			color: $color-accent;
+		}
+	}
+	span.legal {
+		$size: 10;
+		font-size: em($size);
+		font-weight: 300;
+		line-height: em($size * 5);
+		letter-spacing: em($size / 2.5);
+	}
 }
