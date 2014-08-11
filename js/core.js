@@ -13,13 +13,22 @@ var scrollPercent = 0;
 $(function() {
 
   	init3DText();
-
   	resizeContainers();
+
+  	// Initialise scroller library
+	var s = skrollr.init({
+		forceHeight: false,
+        render: function(data) {
+            //Debugging - Log the current scroll position.
+            //console.log(data.curTop);
+        }
+    });
 
   	$(document).scroll(function() {
   		var scrollTop = document.body.scrollTop;
   		var scrollLimit = Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight ) - window.innerHeight;
-  		var scrollLimit = 100;
+  		var scrollLimit = $('#text-wrapper').height() * 0.8;
+  		console.log(scrollLimit);
   		scrollPercent = (scrollTop / scrollLimit) * 100;
   		if(scrollPercent < 0) {
   			scrollPercent = 0;
@@ -29,6 +38,12 @@ $(function() {
   		}
   		//console.log(scrollPercent);
   		update();
+
+  		var opacity = $('#text-wrapper .text-inner').css('opacity');
+  		var margin_top_max = -80;
+  		var margin_top = margin_top_max * (1 - opacity);
+  		$('#text-wrapper .text-inner h1').css('margin-top', margin_top + "px");
+  		console.log(opacity);
 	});
 
 	$(document).click(function() {

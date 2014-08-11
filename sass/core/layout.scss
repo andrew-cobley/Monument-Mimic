@@ -4,8 +4,12 @@ html, body
 {
 	margin: 0;
 	padding: 0;
+}
+
+body
+{
 	background: #43cbbb url('../img/valley/sky.png') no-repeat;
-	background-position: top center;
+	background-position: center top;
 }
 
 div.wrapper
@@ -17,12 +21,22 @@ div.wrapper
 	height: 1000px;
 }
 
-#text-wrapper
+#effects-wrapper
 {
 	position: relative;
-	margin: 32px auto 0 auto;
+}
+
+#text-wrapper
+{
+	margin: 0 auto;
 	width: 100%;
-	min-height: 400px;
+	min-height: 480px;
+}
+
+.text-inner
+{
+	padding-top: 128px;
+	z-index: 999;
 }
 
 #ThreeD-1, #ThreeD-2
@@ -35,7 +49,7 @@ div.wrapper
 	max-height: 120px;
 	//border: 1px solid gold;
 	text-align: center;
-	//z-index: 999;
+	z-index: 999;
 }
 
 #ThreeD-1 
@@ -75,26 +89,27 @@ div.wrapper
 #valley-3 {
 	//bottom: 0;
 	background: url('../img/valley/valley-3.png') no-repeat;
-	opacity: 0.8;
+	opacity: 0.85;
 }
 #valley-4 {
 	//bottom: 0;
 	background: url('../img/valley/valley-4.png') no-repeat;
-	opacity: 0.7;
+	opacity: 0.8;
 }
 #valley-5 {
 	//bottom: 0;
 	background: url('../img/valley/valley-5.png') no-repeat;
-	opacity: 0.6;
+	opacity: 0.75;
 }
 #valley-6 {
 	//bottom: 0;
 	background: url('../img/valley/valley-6b.png') no-repeat;
-	opacity: 0.5;
+	opacity: 0.7;
 }
 
 #valley-1, #valley-2, #valley-3, #valley-4, #valley-5, #valley-6   {
 	position: absolute;
+	//margin-top: -120px;
 	//background-position: bottom center;
 	background-size: cover;
 	//background-size: 100% 100%;
