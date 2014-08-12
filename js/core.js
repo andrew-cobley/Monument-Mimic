@@ -74,7 +74,6 @@ function initPage() {
 	text1 = $('#ThreeD-1').text();
 	text2 = $('#ThreeD-2').text();
 	font = "lato";
-	font = "montserrat";
 
 	openSettings();
 
