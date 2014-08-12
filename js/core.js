@@ -32,7 +32,7 @@ $(function() {
   	$(document).scroll(function() {
   		var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
   		var scrollLimit = Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight ) - window.innerHeight;
-  		var scrollLimit = $('#text-wrapper').height() * 0.8;
+  		var scrollLimit = $('#text-wrapper').height() * 1.2;
   		console.log(scrollLimit);
   		scrollPercent = (scrollTop / scrollLimit) * 100;
   		if(scrollPercent < 0) {
@@ -133,14 +133,21 @@ function clickEditSubmit() {
 
 	font = $('#font').find(":selected").val();
 
-	init3DText();
-	update();
-
 	$('#edit-wrapper').animate({
-		bottom: '100%'
-	}, 1000 );
+		bottom: '100%',
+	}, 500, function() {
+		$('#edit-wrapper').fadeOut(function() {
+			$('canvas').fadeOut(function() {
+				init3DText();
+				update();
+				$('canvas').fadeIn();
+			});
+		});
+	});
 
-	$('#edit-wrapper').fadeOut();
+	//$('#edit-wrapper').fadeOut();
+
+
 
 	console.log("T1 = " + text1 + " | T2 = " + text2 + " | F = " + font);
 }
