@@ -49,6 +49,9 @@ $(function() {
   		var margin_top = margin_top_max * (1 - opacity);
   		$('#text-wrapper .text-inner h1').css('margin-top', margin_top + "px");
   		console.log(opacity);
+
+  		// 
+  		checkEditAllow(scrollTop);
 	});
 
 	$(document).click(function() {
@@ -75,17 +78,27 @@ function initPage() {
 	text2 = $('#ThreeD-2').text();
 	font = "lato";
 
-	openSettings();
-
 	// Add Listeners
 	addSettingsListeners();
 
 	$('#content').css('background', 'none');
 	resizeContainers();
+
 }
 
-function openSettings() {
-	
+function checkEditAllow(scrollTop) {
+
+	console.log("Check!");
+
+	if(scrollTop > 20 && scrollTop < 200)
+  	{
+  		$('#open-settings').css('opacity', 0.7);
+  	}
+  	else
+  	{
+  		$('#open-settings').css('opacity', 0);
+  	}
+
 }
 
 function addSettingsListeners() {

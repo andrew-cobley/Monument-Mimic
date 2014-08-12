@@ -186,7 +186,7 @@ div.wrapper {
   opacity: 1; }
 
 .edit.button {
-  opacity: 0.6; }
+  opacity: 0; }
 
 .edit.button:hover {
   opacity: 1; }
