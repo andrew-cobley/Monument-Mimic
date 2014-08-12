@@ -71,9 +71,10 @@ $(function() {
 function initPage() {
 
 	// Set initial values
-	text1 = "monument";
-	text2 = "valley";
+	text1 = $('#ThreeD-1').text();
+	text2 = $('#ThreeD-2').text();
 	font = "lato";
+	font = "montserrat";
 
 	openSettings();
 
@@ -120,6 +121,9 @@ function clickEditSubmit() {
 
 	font = $('#font').find(":selected").val();
 
+	init3DText();
+	update();
+
 	$('#edit-wrapper').animate({
 		bottom: '100%'
 	}, 1000 );
@@ -137,14 +141,12 @@ function clickEditCancel() {
 function init3DText() {
 
   	line1 = new Line();
-  	var text = $('#ThreeD-1').text();
   	$('#ThreeD-1').text('');
-  	line1.init("ThreeD-1", text);
+  	line1.init("ThreeD-1", text1, font);
 
   	line2 = new Line();
-  	var text = $('#ThreeD-2').text();
   	$('#ThreeD-2').text('');
-  	line2.init("ThreeD-2", text);
+  	line2.init("ThreeD-2", text2, font);
 
 }
 

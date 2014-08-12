@@ -2,13 +2,13 @@ function Line() {
 
   this.container, this.renderer, this.scene, this.camera;
   this.light, this.light_right, this.light_left;
-  this.content; this.group, this.mesh;
+  this.content, this.font, this.group, this.mesh;
 
   this.characters = [];
 
 }
 
-Line.prototype.init = function(elementID, content) {
+Line.prototype.init = function(elementID, content, font) {
 
   this.container = document.getElementById(elementID);
   var $container = $(this.container);
@@ -23,6 +23,8 @@ Line.prototype.init = function(elementID, content) {
 
   this.content = content.trim();
   this.content = this.content.toUpperCase();
+
+  this.font = font;
 
   this.setHeight();
   var width = $container.width();
@@ -72,7 +74,7 @@ Line.prototype.setupContent = function() {
   for (var i = 0; i < this.content.length; i++)
   {
     var character = new Character();
-    character.init(this, this.content.charAt(i), offsetX, ratio);
+    character.init(this, this.content.charAt(i), this.font, offsetX, ratio);
     this.characters.push(character);
 
     console.log(">>> CHAR = " + character.char + " X = " + character.group.position.x + " , W = " + character.x + " , P = " + character.mesh.position.x);

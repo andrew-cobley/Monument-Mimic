@@ -14,13 +14,13 @@ function Character() {
 
 }
 
-Character.prototype.init = function(parent,char,posX,ratio) {
+Character.prototype.init = function(parent,char,font,posX,ratio) {
 
     this.parent = parent;
     this.char = char;
     this.color = 0xF7F7EB;
 
-    this.font_family = 'lato';
+    this.font_family = font;
     //this.font_family = 'montserrat';
     this.font_size = 100 * ratio;
     this.thickness = 8;
