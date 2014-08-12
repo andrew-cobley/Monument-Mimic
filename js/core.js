@@ -25,7 +25,7 @@ $(function() {
     });
 
   	$(document).scroll(function() {
-  		var scrollTop = document.body.scrollTop;
+  		var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
   		var scrollLimit = Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight ) - window.innerHeight;
   		var scrollLimit = $('#text-wrapper').height() * 0.8;
   		console.log(scrollLimit);
@@ -36,7 +36,7 @@ $(function() {
   		else if (scrollPercent > 100) {
   			scrollPercent = 100;
   		}
-  		//console.log(scrollPercent);
+  		console.log(scrollTop + " / " + scrollLimit + " * 100 = " + scrollPercent);
   		update();
 
   		var opacity = $('#text-wrapper .text-inner').css('opacity');
