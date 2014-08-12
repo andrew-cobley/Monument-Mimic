@@ -12,8 +12,11 @@ var scrollPercent = 0;
 
 $(function() {
 
+  	// Initialise JS for current browser
+  	initPage();
+
+  	// Init 3D Text Effects
   	init3DText();
-  	resizeContainers();
 
   	// Initialise scroller library
 	var s = skrollr.init({
@@ -64,6 +67,11 @@ $(function() {
 
 });
 
+function initPage() {
+	$('#content').css('background', 'none');
+	resizeContainers();
+}
+
 function init3DText() {
 
   	line1 = new Line();
@@ -80,12 +88,16 @@ function init3DText() {
 
 function resizeContainers() {
 
+	// Valley
 	var el = $('div#valley-1');
 	var ratio = el.width() / parseInt( el.css('max-width') );
 	console.log(el.width());
   	var height = parseInt(el.css('max-height')) * ratio;
   	console.log(height);
   	$('div.valley').height(height);
+
+  	// Content
+  	$('#content-wrapper').height($('#content').height());
 }
 
 function update() {

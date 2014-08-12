@@ -207,25 +207,29 @@ div.wrapper {
 #content-wrapper {
   position: relative;
   background: #2b3d42; }
-  #content-wrapper header, #content-wrapper main, #content-wrapper footer {
-    margin: 0 auto;
-    max-width: 540px;
-    text-align: center;
-    color: rgba(240, 240, 240, 0.9); }
-  #content-wrapper header {
-    text-align: center; }
-  #content-wrapper main {
-    padding: 1em;
-    text-align: justify; }
-  #content-wrapper main:hover p a {
-    color: rgba(67, 203, 187, 0.9); }
-  #content-wrapper footer {
-    padding: 1em 0; }
-    #content-wrapper footer ul {
+  #content-wrapper #content {
+    position: absolute;
+    width: 100%;
+    background: #2b3d42; }
+    #content-wrapper #content header, #content-wrapper #content main, #content-wrapper #content footer {
       margin: 0 auto;
-      padding: 1em 0 2em 0;
-      list-style-type: none;
+      max-width: 540px;
+      text-align: center;
+      color: rgba(240, 240, 240, 0.9); }
+    #content-wrapper #content header {
       text-align: center; }
-      #content-wrapper footer ul li {
-        display: inline;
-        padding: 0 1em; }
+    #content-wrapper #content main {
+      padding: 1em;
+      text-align: justify; }
+    #content-wrapper #content main:hover p a {
+      color: rgba(67, 203, 187, 0.9); }
+    #content-wrapper #content footer {
+      padding: 1em 0; }
+      #content-wrapper #content footer ul {
+        margin: 0 auto;
+        padding: 1em 0 2em 0;
+        list-style-type: none;
+        text-align: center; }
+        #content-wrapper #content footer ul li {
+          display: inline;
+          padding: 0 1em; }
