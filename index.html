@@ -15,12 +15,38 @@
   
   	<div class="wrapper">
 
-      <div class="effects-wrapper">
+      <div id="effects-wrapper">
+
+        <div id="edit-wrapper">
+          <div class="edit-inner">
+            <!-- Add top decal -->
+            <form id="settings">
+              <div class="group">
+                <label>Text</label>
+                <input type="text" id="text1" />
+                <input type="text" id="text2" />
+              </div>
+              <div class="group">
+                <label>Font</label>
+                <select id="font">
+                  <option value="lato">Lato</option>
+                  <option value="montserrat">Monstserrat</option>
+                </select>
+              </div>
+              <div class="group">
+                <input type="submit" id="edit-save" value="Save" />
+                <input type="button" id="edit-cancel" value="Cancel" />
+              </div>
+            </form> 
+            <!-- Add bottom decal -->
+          </div>
+        </div>
 
         <div id="text-wrapper">
           <div class="text-inner" data-top="opacity: 1; position: absolute; top: 0%;" data--200-top-bottom="top: 60%; opacity: 1; line-height: 100%;" data--300-top-bottom="top: 50%; opacity: 0; line-height: 50%;" data-anchor="#effects-wrapper">
             <h1 id="ThreeD-1">Monument</h1>
             <h1 id="ThreeD-2">Valley</h1>
+            <a href="#" id="open-settings" class="edit button">Edit</a>
           </div>
         </div>
 

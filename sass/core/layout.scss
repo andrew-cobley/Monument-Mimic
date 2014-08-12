@@ -21,6 +21,105 @@ div.wrapper
 	height: 1000px;
 }
 
+.button
+{
+	margin: 2em auto 0 auto;
+	padding: 0.5em;
+	width: 4em;
+	height: 4em;
+	line-height: 4em;
+	display: block;
+	border-radius: 50%;
+	border: 1px solid $color-light;
+	transition: all 1s;
+}
+
+.button:hover 
+{
+	background-color: $color-accent;
+	opacity: 1;
+}
+
+.edit.button
+{
+	opacity: 0.6;
+}
+.edit.button:hover
+{
+	opacity: 1;
+}
+
+
+#edit-wrapper
+{
+	display: none;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+
+	.edit-inner
+	{
+		margin: 10px auto;
+		padding: 1em 2em;
+		width: 300px;
+		min-height: 460px;
+		background: $color-dark;
+		border-radius: 0.5em;
+		color: $color-light;
+
+		form {
+			.group {
+				padding-bottom: 1em;
+				width: 100%;
+				text-align: center;
+			}
+			label {
+				margin: 0.5em 0;
+				line-height: 2.5em;
+				width: 100%;
+				box-sizing: border-box;
+			}
+			input[type=text], select {
+				margin: 0.5em 0;
+				width: 100%;
+				line-height: 2em;
+				box-sizing: border-box;
+				background: none;
+				border-radius: 5px;
+				border: 1px solid $color-light;
+			}
+			select {
+				height: 2em;
+				option {
+					text-align: center;
+				}
+			}
+			input[type=submit], input[type=button] {
+				margin: 1.5em;
+				width: 6.5em;
+				height: 6.5em;
+				line-height: 5em;
+				text-align: center;
+				border-radius: 50%;
+				border: 1px solid $color-light;
+				background: none;
+				transition: background-color 1s;
+			}
+			input[type=submit]:hover {
+				cursor: pointer;
+				background-color: $color-accent;
+			}
+			input[type=button]:hover {
+				cursor: pointer;
+				background-color: $color-accent-alt;
+			}
+		}
+	}
+}
+
 #effects-wrapper
 {
 	position: relative;
@@ -36,6 +135,7 @@ div.wrapper
 .text-inner
 {
 	padding-top: 128px;
+	text-align: center;
 	z-index: 999;
 }
 

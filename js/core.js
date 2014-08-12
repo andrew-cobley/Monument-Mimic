@@ -10,6 +10,8 @@ var lineTest;
 var word_scene;
 var scrollPercent = 0;
 
+var text1, text2, font;
+
 $(function() {
 
   	// Initialise JS for current browser
@@ -50,8 +52,7 @@ $(function() {
 	});
 
 	$(document).click(function() {
-		console.log("click");
-		line1.restore();
+
 	});
 
 
@@ -68,8 +69,69 @@ $(function() {
 });
 
 function initPage() {
+
+	// Set initial values
+	text1 = "monument";
+	text2 = "valley";
+	font = "lato";
+
+	openSettings();
+
+	// Add Listeners
+	addSettingsListeners();
+
 	$('#content').css('background', 'none');
 	resizeContainers();
+}
+
+function openSettings() {
+	
+}
+
+function addSettingsListeners() {
+	$('#open-settings').click(function() {
+		clickOpenSettings();
+	});
+	$('#edit-cancel').click(function() {
+		clickEditCancel();
+	});
+	$('#settings').submit(function(e) {
+		clickEditSubmit();
+		return false;
+	});
+}
+
+function clickOpenSettings() {
+	console.log("Open Settings");
+	$('#text1').val(text1);
+	$('#text2').val(text2);
+	
+	$('#font option[value="' + font + '"]').prop('selected',true);
+
+	$('#edit-wrapper').css('bottom', 0);
+	$('#edit-wrapper').fadeIn();
+}
+
+function clickEditSubmit() {
+	console.log("Submit Edit");
+
+	text1 = $('#text1').val();
+	text2 = $('#text2').val();
+
+	font = $('#font').find(":selected").val();
+
+	$('#edit-wrapper').animate({
+		bottom: '100%'
+	}, 1000 );
+
+	$('#edit-wrapper').fadeOut();
+
+	console.log("T1 = " + text1 + " | T2 = " + text2 + " | F = " + font);
+}
+
+function clickEditCancel() {
+	console.log("Cancel Edit");
+	$('#edit-wrapper').fadeOut();
 }
 
 function init3DText() {
