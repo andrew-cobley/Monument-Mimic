@@ -23,7 +23,7 @@ Character.prototype.init = function(parent,char,font,posX,ratio) {
     this.font_family = font;
     //this.font_family = 'montserrat';
     this.font_size = 100 * ratio;
-    this.thickness = 8;
+    this.thickness = Math.ceil(8 * ratio);
 
     this.params = {};
 

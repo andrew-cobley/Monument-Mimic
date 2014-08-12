@@ -69,7 +69,7 @@ Line.prototype.setupContent = function() {
 
   var ratio = this.getContainerRatio();
   var offsetX = 0;
-  var spacing = 20;
+  var spacing = 20 * ratio;
 
   for (var i = 0; i < this.content.length; i++)
   {
