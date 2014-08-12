@@ -51,12 +51,78 @@ table {
 body {
   font-size: 100%; }
 
-h1 {
+a, a:visited {
+  color: rgba(240, 240, 240, 0.9);
+  text-decoration: none; }
+
+#effects-wrapper h1 {
   font-family: 'Lato', sans-serif;
   font-size: 5em;
   font-weight: 300;
   letter-spacing: 0.125em;
   text-transform: uppercase; }
+
+#content-wrapper {
+  color: rgba(240, 240, 240, 0.9); }
+  #content-wrapper h1, #content-wrapper h2, #content-wrapper span.pre-title, #content-wrapper a.button, #content-wrapper a.button:visited, #content-wrapper span.legal {
+    margin: 0 auto;
+    font-family: 'Roboto Slab', serif;
+    text-transform: uppercase; }
+  #content-wrapper span.sub-intro, #content-wrapper p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300; }
+  #content-wrapper h1 {
+    font-size: 1.75em;
+    font-weight: 400;
+    line-height: 1.75em;
+    letter-spacing: 0.375em; }
+  #content-wrapper h2 {
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 2em;
+    letter-spacing: 0.25em;
+    max-width: 20em; }
+  #content-wrapper span.pre-title, #content-wrapper a.button, #content-wrapper a.button:visited {
+    font-size: 0.875em;
+    font-weight: 300;
+    letter-spacing: 0.21875em; }
+  #content-wrapper span.pre-title {
+    line-height: 1.75em; }
+  #content-wrapper span.sub-intro {
+    font-size: 0.625em;
+    font-weight: 300;
+    line-height: 3.125em;
+    letter-spacing: 0.125em;
+    text-transform: uppercase; }
+  #content-wrapper a.button, #content-wrapper a.button:visited {
+    margin: 16px auto;
+    padding: 5px;
+    width: 6em;
+    height: 6em;
+    line-height: 6em;
+    display: block;
+    border-radius: 50%;
+    border: 1px solid rgba(240, 240, 240, 0.9);
+    transition: background 1s; }
+  #content-wrapper a.button:hover {
+    background: rgba(67, 203, 187, 0.9); }
+  #content-wrapper p {
+    margin-bottom: 1em;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.5em;
+    letter-spacing: 0.0625em;
+    word-spacing: 0.125em; }
+    #content-wrapper p a, #content-wrapper p a:visited {
+      font-weight: 400;
+      transition: color 1s; }
+    #content-wrapper p a:hover {
+      color: rgba(67, 203, 187, 0.9); }
+  #content-wrapper span.legal {
+    font-size: 0.625em;
+    font-weight: 300;
+    line-height: 3.125em;
+    letter-spacing: 0.25em; }
 
 html, body {
   margin: 0;
@@ -140,6 +206,26 @@ div.wrapper {
 
 #content-wrapper {
   position: relative;
-  width: 100%;
-  min-height: 480px;
   background: #2b3d42; }
+  #content-wrapper header, #content-wrapper main, #content-wrapper footer {
+    margin: 0 auto;
+    max-width: 540px;
+    text-align: center;
+    color: rgba(240, 240, 240, 0.9); }
+  #content-wrapper header {
+    text-align: center; }
+  #content-wrapper main {
+    padding: 1em;
+    text-align: justify; }
+  #content-wrapper main:hover p a {
+    color: rgba(67, 203, 187, 0.9); }
+  #content-wrapper footer {
+    padding: 1em 0; }
+    #content-wrapper footer ul {
+      margin: 0 auto;
+      padding: 1em 0 2em 0;
+      list-style-type: none;
+      text-align: center; }
+      #content-wrapper footer ul li {
+        display: inline;
+        padding: 0 1em; }
