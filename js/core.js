@@ -78,7 +78,8 @@ function initPage() {
 	resizeContainers();
 
 	// Initialise Valley Positions
-	scrollUpdateValleys(1);
+	var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+	scrollUpdateValleys(scrollTop);
 
 }
 
@@ -96,6 +97,15 @@ function checkEditAllow(scrollTop) {
   		$('#open-settings').css('opacity', 0);
   	}
 
+}
+
+function checkIfTextFade() {
+
+	var opacity = $('#text-wrapper .text-inner').css('opacity');
+  	var margin_top_max = -80;
+  	var margin_top = margin_top_max * (1 - opacity);
+  	$('#text-wrapper .text-inner h1').css('margin-top', margin_top + "px");
+  	console.log(opacity);
 }
 
 function addSettingsListeners() {
@@ -131,6 +141,9 @@ function addSettingsListeners() {
   	
   		// Run Update on Text Effects
   		scrollUpdateTextEffects(scrollPercent);
+
+  		// Check if Text Effects Fading
+  		checkIfTextFade();
 
   		// Check If Edit Button should show
   		checkEditAllow(scrollTop);
