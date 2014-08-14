@@ -160,7 +160,7 @@ function scrollUpdateValleys(scroll)
 {
 	// Valley Parallax
   	var valley = $('#valley-wrapper').position();
-  	var valleyLimit = $('#valley-wrapper').height();
+  	var valleyLimit = $('#text-wrapper').height() * 1.5;
 
   	if (scroll > 0 && scroll < valleyLimit) 
   	{
@@ -215,7 +215,7 @@ function clickEditSubmit() {
 		$('#edit-wrapper').fadeOut(function() {
 			$('canvas').fadeOut(function() {
 				init3DText();
-				crollUpdateTextEffects(scrollPercent);
+				scrollUpdateTextEffects(scrollPercent);
 				$('canvas').fadeIn();
 			});
 		});
@@ -263,6 +263,9 @@ function resizeContainers() {
 
   	// Update content-wrapper height to mimic content height.
   	$('#content-wrapper').height($('#content').height());
+
+  	// Update body height
+  	$('body').height( $('#effects-wrapper').height() + $('#content-wrapper').height() );
 }
 
 
