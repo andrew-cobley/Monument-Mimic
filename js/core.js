@@ -12,6 +12,8 @@ var scrollPercent = 0;
 
 var text1, text2, font;
 
+var valleys = ['valley-1','valley-2','valley-3','valley-4','valley-5','valley-6'];
+
 $(function() {
 
 	resizeContainers();
@@ -54,8 +56,6 @@ $(function() {
       resizeContainers()
     });
 
-	//update();
-
 });
 
 function initPage() {
@@ -71,8 +71,14 @@ function initPage() {
 	// Add Listeners
 	addSettingsListeners();
 
+	// Reset Content Background
 	$('#content').css('background', 'none');
+
+	// Initialise Containers Sizings
 	resizeContainers();
+
+	// Initialise Valley Positions
+	scrollUpdateValleys(1);
 
 }
 
@@ -80,6 +86,7 @@ function checkEditAllow(scrollTop) {
 
 	console.log("Check!");
 
+	// Check within bounds to show the edit button.
 	if(scrollTop > 20 && scrollTop < 200)
   	{
   		$('#open-settings').css('opacity', 0.7);
@@ -92,6 +99,8 @@ function checkEditAllow(scrollTop) {
 }
 
 function addSettingsListeners() {
+
+	// Add listeners to editing features
 	$('#open-settings').click(function(e) {
 		e.preventDefault();
 		clickOpenSettings();
@@ -117,14 +126,13 @@ function addSettingsListeners() {
   			scrollPercent = 100;
   		}
 
-  		update();
+  		// Run Update on Valleys
+  		scrollUpdateValleys(scrollTop);
+  	
+  		// Run Update on Text Effects
+  		scrollUpdateTextEffects(scrollPercent);
 
-  		var opacity = $('#text-wrapper .text-inner').css('opacity');
-  		var margin_top_max = -80;
-  		var margin_top = margin_top_max * (1 - opacity);
-  		$('#text-wrapper .text-inner h1').css('margin-top', margin_top + "px");
-  		console.log(opacity);
-
+  		// Check If Edit Button should show
   		checkEditAllow(scrollTop);
 	});
 
@@ -133,6 +141,39 @@ function addSettingsListeners() {
       line1.resize();
       line2.resize();
     });
+}
+
+function scrollUpdateValleys(scroll) 
+{
+	// Valley Parallax
+  	var valley = $('#valley-wrapper').position();
+  	var valleyLimit = $('#valley-wrapper').height();
+
+  	if (scroll > 0 && scroll < valleyLimit) 
+  	{
+  		var valleyPercent = (scroll / valleyLimit);
+  		for (var i = 0; i < valleys.length; i++)
+  		{
+  			var v = $('#' + valleys[i]);
+  			if(v.data('p-max') && v.data('p-min'))
+  			{
+  				var max = parseInt(v.data('p-max'));
+  				var min = parseInt(v.data('p-min'));
+  				var bounds =  Math.abs(max) + Math.abs(min);
+  				console.log(bounds);
+
+  				var y = (max > min) ? max - (bounds * valleyPercent) : max + (bounds * valleyPercent);
+		
+				v.css('transform', 'translate(0%, ' + y + '%)');
+			}
+  		}
+  	}
+}
+
+function scrollUpdateTextEffects(scrollPercent)
+{
+  	line1.update(scrollPercent);
+  	line2.update(scrollPercent);
 }
 
 function clickOpenSettings() {
@@ -149,28 +190,23 @@ function clickOpenSettings() {
 function clickEditSubmit() {
 	console.log("Submit Edit");
 
+	// Update variables for Text and Font
 	text1 = $('#text1').val();
 	text2 = $('#text2').val();
-
 	font = $('#font').find(":selected").val();
 
+	// Remove edit options then update the canvas
 	$('#edit-wrapper').animate({
 		bottom: '120%',
 	}, 500, function() {
 		$('#edit-wrapper').fadeOut(function() {
 			$('canvas').fadeOut(function() {
 				init3DText();
-				update();
+				crollUpdateTextEffects(scrollPercent);
 				$('canvas').fadeIn();
 			});
 		});
 	});
-
-	//$('#edit-wrapper').fadeOut();
-
-
-
-	console.log("T1 = " + text1 + " | T2 = " + text2 + " | F = " + font);
 }
 
 function clickEditCancel() {
@@ -180,6 +216,7 @@ function clickEditCancel() {
 
 function init3DText() {
 
+	// Check settings exist for font, before initialising
 	if(effect_settings[font])
 	{
 		var settings = effect_settings[font];
@@ -203,7 +240,7 @@ function init3DText() {
 
 function resizeContainers() {
 
-	// Valley
+	// Resize valleys to maintain aspect ratio
 	var el = $('div#valley-1');
 	var ratio = el.width() / parseInt( el.css('max-width') );
 	console.log(el.width());
@@ -211,15 +248,10 @@ function resizeContainers() {
   	console.log(height);
   	$('div.valley').height(height);
 
-  	// Content
+  	// Update content-wrapper height to mimic content height.
   	$('#content-wrapper').height($('#content').height());
 }
 
-function update()
-{
-  	line1.update(scrollPercent);
-  	line2.update(scrollPercent);
-}
 
 function initPageNoWebGL() 
 {
@@ -236,6 +268,7 @@ function initPageWebGLProblem()
 	$('#text-no-webgl p').html("Hmm, it seems like WebGL is available but not working correctly in your browser. Let's try and <a href='http://get.webgl.org/troubleshooting'>solve the issue!</a>");
 	$('#text-no-webgl').css('display', 'block');
 }
+
 
 
 var rotWorldMatrix;
