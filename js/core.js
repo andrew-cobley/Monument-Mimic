@@ -160,13 +160,24 @@ function clickEditCancel() {
 
 function init3DText() {
 
-  	line1 = new Line();
-  	$('#ThreeD-1').text('');
-  	line1.init("ThreeD-1", text1, font);
+	if(effect_settings[font])
+	{
+		var settings = effect_settings[font];
 
-  	line2 = new Line();
-  	$('#ThreeD-2').text('');
-  	line2.init("ThreeD-2", text2, font);
+		line1 = new Line();
+  		$('#ThreeD-1').text('');
+  		line1.init("ThreeD-1", text1, settings);
+	
+  		line2 = new Line();
+  		$('#ThreeD-2').text('');
+  		line2.init("ThreeD-2", text2, settings);
+	}
+	else
+	{
+		console.error("FONT EFFECT SETTINGS NOT FOUND");
+		// -> OR REVERT TO DEFAULTS?
+	}
+
 
 }
 
@@ -205,61 +216,6 @@ function rotateAroundWorldAxis(object, axis, radians) {
     object.matrix = rotWorldMatrix;
 
     object.rotation.setFromRotationMatrix(object.matrix);
-}
-
-
-function fetchOptionsForLetter(letter) {
-	var options = [];
-	//options['splitMiddleX'] = 
-	options['splitYMiddleX'] = { split: {x: 0, y: 41, z: 0} };
-	options['splitMiddleX'] = { split: {x: 0, y: 50, z: 0} };
-	options['splitBottomX'] = { split: {x: 0, y: 6.5, z: 0} };
-	options['splitLeftY'] = { split: {x: 12.3, y: 0, z: 0} };
-	options['splitMiddleY'] = { split: {x: 50, y: 0, z: 0} };
-	options['rotateMiddleX'] = { rotation: {r0: {x: 0, y: 0, z: 0}, r1: {x: Math.PI/2, y: 0 , z: 0}} };
-	options['rotateMiddleY'] = { rotation: {r0: {x: 0, y: 0, z: 0}, r1: {x: 0, y: Math.PI/2 , z: 0}} };
-	options['rotateDiag'] = { rotation: {r0: {x: 0, y: 0, z: 0}, r1: {x: 0, y: Math.PI/2, z: Math.PI/4}} };
-	options['rotateDiagAlt'] = { rotation: {r0: {x: 0, y: 0, z: 0}, r1: {x: -Math.PI/8, y: Math.PI/2, z: Math.PI/8}} };
-
-	var letters = [];
-	letters['A'] = 'rotateMiddleX';
-	letters['B'] = 'splitMiddleX';
-	letters['C'] = 'splitMiddleX';
-	letters['D'] = 'splitMiddleX';
-	letters['E'] = 'splitLeftY';
-	letters['F'] = 'rotateMiddleX';
-	letters['G'] = 'rotateMiddleX';
-	letters['H'] = 'splitMiddleY';
-	letters['I'] = 'rotateMiddleX';
-	letters['J'] = 'rotateMiddleX';
-	letters['K'] = 'splitMiddleY';
-	letters['L'] = 'splitBottomX';
-	letters['M'] = 'splitMiddleY';
-	letters['N'] = 'rotateDiagAlt';
-	letters['O'] = 'splitMiddleX';
-	letters['P'] = 'rotateMiddleX';
-	letters['Q'] = 'rotateDiag';
-	letters['R'] = 'rotateMiddleX';
-	letters['S'] = 'rotateMiddleX';
-	letters['T'] = 'rotateMiddleX';
-	letters['U'] = 'splitMiddleX';
-	letters['V'] = 'rotateMiddleY';
-	letters['W'] = 'splitMiddleY';
-	letters['X'] = 'splitMiddleX';
-	letters['Y'] = 'splitYMiddleX';
-	letters['Z'] = 'rotateDiag';
-
-	var option = options['splitMiddleX'];
-	for (var index in letters) {
-		//console.log(index);
-		if (index === letter) {
-			var option = options[letters[index]];
-			break;
-		}
-	}
-
-	//var option = options['splitMiddleX'];
-	return option;
 }
 
 

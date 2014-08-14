@@ -2,7 +2,7 @@ function Character() {
 
   this.parent;
   this.mesh, this.box, this.group, this.params;
-  this.char, this.color, this.font_family, this.font_size, this.thickness, this.posX;
+  this.char, this.color, this.settings, this.font_family, this.font_size, this.thickness, this.posX;
   this.x, this.y, this.z;
 
   this.boxes = [];
@@ -14,11 +14,16 @@ function Character() {
 
 }
 
-Character.prototype.init = function(parent,char,font,posX,ratio) {
+Character.prototype.init = function(parent,char,settings,posX,ratio) {
 
     this.parent = parent;
     this.char = char;
+
+    this.settings = settings;
+
     this.color = 0xF7F7EB;
+
+    console.log(this.settings);
 
     this.font_family = font;
     //this.font_family = 'montserrat';
@@ -49,7 +54,7 @@ Character.prototype.setupBaseChar = function() {
 
 Character.prototype.setupParams = function() {
   
-  var options = fetchOptionsForLetter(this.char);
+  var options = this.getOptions();
 
   console.dir(options);
     
@@ -60,6 +65,25 @@ Character.prototype.setupParams = function() {
   if (options.rotation !== undefined) {
     this.params['rotation'] = options.rotation;
   }
+}
+
+Character.prototype.getOptions = function() {
+
+  var options = this.settings.options;
+  var characters = this.settings.characters;
+  var option = characters['default'];
+
+  for (var index in characters) {
+    //console.log(index);
+    if (index === this.char) {
+      console.log(index);
+      var option = options[characters[index]];
+      break;
+    }
+  }
+
+  return option;
+
 }
 
 Character.prototype.setupEffects = function() {
