@@ -19,6 +19,19 @@ a, a:visited {
 	text-decoration: none;
 }
 
+h3
+{
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+	$size: 12;
+	font-size: em($size);
+	font-weight: 300;
+	line-height: em($size * 6);
+	letter-spacing: em($size / 4);
+	text-transform: uppercase;
+	color: $color-light;
+}
+
 label {
 	font-family: 'Roboto Slab', serif;
 	font-size: 1em;
@@ -59,9 +72,10 @@ input[type=submit], input[type=button] {
 }
 
 .button, .button:visited {
+	font-family: 'Lato', sans-serif;
 	$size: 14;
 	font-size: em($size);
-	font-weight: 300;
+	font-weight: 400;
 	letter-spacing: em($size / 4);
 	text-align: center;
 	text-transform: uppercase;
@@ -70,7 +84,7 @@ input[type=submit], input[type=button] {
 #content-wrapper, #text-no-webgl
 {
 	color: $color-light;
-	h1,h2,span.pre-title,a.button,a.button:visited, span.legal
+	h1,h2,span.pre-title, span.legal
 	{
 		margin: 0 auto;
 		font-family: 'Roboto Slab', serif;
@@ -115,14 +129,15 @@ input[type=submit], input[type=button] {
 	}
 	a.button
 	{
+		font-family: 'Lato', sans-serif;
+		font-weight: 400;
 		margin: 16px auto;
-		padding: 5px;
 		width: 6em;
 		height: 6em;
 		line-height: 6em;
 		display: block;
 		border-radius: 50%;
-		border: 1px solid $color-light;
+		border: 2px solid $color-light;
 		transition: background 1s;
 	}
 	a.button:hover {

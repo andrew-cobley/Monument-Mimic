@@ -83,22 +83,6 @@ function initPage() {
 
 }
 
-function checkEditAllow(scrollTop) {
-
-	console.log("Check!");
-
-	// Check within bounds to show the edit button.
-	if(scrollTop > 20 && scrollTop < 200)
-  	{
-  		$('#open-settings').css('opacity', 0.7);
-  	}
-  	else
-  	{
-  		$('#open-settings').css('opacity', 0);
-  	}
-
-}
-
 function checkIfTextFade() {
 
 	var opacity = $('#text-wrapper .text-inner').css('opacity');
@@ -145,8 +129,6 @@ function addSettingsListeners() {
   		// Check if Text Effects Fading
   		checkIfTextFade();
 
-  		// Check If Edit Button should show
-  		checkEditAllow(scrollTop);
 	});
 
 	// Add resize listener to deal with Line adjustments.
@@ -162,7 +144,7 @@ function scrollUpdateValleys(scroll)
   	var valley = $('#valley-wrapper').position();
   	var valleyLimit = $('#text-wrapper').height() * 1.5;
 
-  	if (scroll > 0 && scroll < valleyLimit) 
+  	if (scroll >= 0 && scroll < valleyLimit) 
   	{
   		var valleyPercent = (scroll / valleyLimit);
   		for (var i = 0; i < valleys.length; i++)

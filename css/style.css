@@ -55,6 +55,16 @@ a, a:visited {
   color: rgba(240, 240, 240, 0.9);
   text-decoration: none; }
 
+h3 {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.75em;
+  font-weight: 300;
+  line-height: 4.5em;
+  letter-spacing: 0.1875em;
+  text-transform: uppercase;
+  color: rgba(240, 240, 240, 0.9); }
+
 label {
   font-family: 'Roboto Slab', serif;
   font-size: 1em;
@@ -87,15 +97,16 @@ input[type=submit], input[type=button] {
   text-transform: uppercase; }
 
 .button, .button:visited {
+  font-family: 'Lato', sans-serif;
   font-size: 0.875em;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.21875em;
   text-align: center;
   text-transform: uppercase; }
 
 #content-wrapper, #text-no-webgl {
   color: rgba(240, 240, 240, 0.9); }
-  #content-wrapper h1, #content-wrapper h2, #content-wrapper span.pre-title, #content-wrapper a.button, #content-wrapper a.button:visited, #content-wrapper span.legal, #text-no-webgl h1, #text-no-webgl h2, #text-no-webgl span.pre-title, #text-no-webgl a.button, #text-no-webgl a.button:visited, #text-no-webgl span.legal {
+  #content-wrapper h1, #content-wrapper h2, #content-wrapper span.pre-title, #content-wrapper span.legal, #text-no-webgl h1, #text-no-webgl h2, #text-no-webgl span.pre-title, #text-no-webgl span.legal {
     margin: 0 auto;
     font-family: 'Roboto Slab', serif;
     text-transform: uppercase; }
@@ -126,14 +137,15 @@ input[type=submit], input[type=button] {
     letter-spacing: 0.125em;
     text-transform: uppercase; }
   #content-wrapper a.button, #text-no-webgl a.button {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
     margin: 16px auto;
-    padding: 5px;
     width: 6em;
     height: 6em;
     line-height: 6em;
     display: block;
     border-radius: 50%;
-    border: 1px solid rgba(240, 240, 240, 0.9);
+    border: 2px solid rgba(240, 240, 240, 0.9);
     transition: background 1s; }
   #content-wrapper a.button:hover, #text-no-webgl a.button:hover {
     background: rgba(67, 203, 187, 0.9); }
@@ -177,13 +189,13 @@ div.wrapper {
 
 .button {
   margin: 2em auto 0 auto;
-  padding: 0.5em;
-  width: 4em;
-  height: 4em;
-  line-height: 4em;
+  padding: 0em;
+  width: 4.5em;
+  height: 4.5em;
+  line-height: 4.5em;
   display: block;
   border-radius: 50%;
-  border: 1px solid rgba(240, 240, 240, 0.9);
+  border: 2px solid rgba(240, 240, 240, 0.9);
   transition: all 1s; }
 
 .button:hover {

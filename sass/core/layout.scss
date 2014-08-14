@@ -29,13 +29,13 @@ div.wrapper
 .button
 {
 	margin: 2em auto 0 auto;
-	padding: 0.5em;
-	width: 4em;
-	height: 4em;
-	line-height: 4em;
+	padding: 0em;
+	width: 4.5em;
+	height: 4.5em;
+	line-height: 4.5em;
 	display: block;
 	border-radius: 50%;
-	border: 1px solid $color-light;
+	border: 2px solid $color-light;
 	transition: all 1s;
 }
 
