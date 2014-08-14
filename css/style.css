@@ -155,11 +155,15 @@ input[type=submit], input[type=button] {
     line-height: 3.125em;
     letter-spacing: 0.25em; }
 
-html, body {
+html {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  background: #2b3d42; }
 
 body {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px;
   background: #43cbbb url("../img/valley/sky.png") no-repeat;
   background-position: 50% 0%;
   background-attachment: fixed; }
