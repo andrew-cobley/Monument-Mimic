@@ -102,7 +102,8 @@ function checkEditAllow(scrollTop) {
 }
 
 function addSettingsListeners() {
-	$('#open-settings').click(function() {
+	$('#open-settings').click(function(e) {
+		e.preventDefault();
 		clickOpenSettings();
 	});
 	$('#edit-cancel').click(function() {
@@ -134,7 +135,7 @@ function clickEditSubmit() {
 	font = $('#font').find(":selected").val();
 
 	$('#edit-wrapper').animate({
-		bottom: '100%',
+		bottom: '120%',
 	}, 500, function() {
 		$('#edit-wrapper').fadeOut(function() {
 			$('canvas').fadeOut(function() {

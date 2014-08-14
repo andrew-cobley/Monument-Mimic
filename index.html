@@ -11,7 +11,8 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
   </head>
 
-  <body id="skrollr-body" data-top="background-position: 50% -50px;" data-center="background-position: 50% 50px;">
+  <!--<body id="skrollr-body" data-smooth-scrolling="off" data-top="background-position: 50% 0%;" data-bottom="background-position: 50% 50%;">-->
+  <body id="skrollr-body">
   
   	<div class="wrapper">
 
@@ -44,19 +45,37 @@
         </div>
 
         <div id="text-wrapper">
-          <div class="text-inner" data-top="opacity: 1; position: absolute; top: 0%; width: 100%;" data--200-top-bottom="top: 50%; opacity: 1; width: 100%;" data--300-top-bottom="top: 40%; opacity: 0; width: 100%;" data-anchor="#effects-wrapper">
+          <div class="text-inner" data-smooth-scrolling="off" data-top="opacity: 1; position: fixed; top: 0px; width: 100%;" data--200-top-bottom="top: 0px; opacity: 1; width: 100%;" data--300-top-bottom="top: -120px; opacity: 0; width: 100%;" data-anchor="#effects-wrapper">
             <h1 id="ThreeD-1">Monument</h1>
             <h1 id="ThreeD-2">Valley</h1>
             <a href="#" id="open-settings" class="edit button">Edit</a>
           </div>
         </div>
 
-        <div id="valley-wrapper" class="valley">
+        <!--<div id="valley-wrapper" class="valley">
           <div id="valley-6" data-start="margin-top: -15%;" data-top="margin-top: 15%;" class="valley"></div>
           <div id="valley-5" data-start="margin-top: -12%;" data-top="margin-top: 12%;"class="valley"></div>
           <div id="valley-4" data-start="margin-top: -9%;" data-top="margin-top: 9%;"class="valley"></div>
           <div id="valley-3" data-start="margin-top: -6%;" data-top="margin-top: 6%;"class="valley"></div>
           <div id="valley-2" data-start="margin-top: -3%;" data-top="margin-top: 3%;"class="valley"></div>
+          <div id="valley-1" class="valley"></div>
+        </div>-->
+
+        <!--<div id="valley-wrapper" class="valley">
+          <div id="valley-6" data-smooth-scrolling="off" data-start="transform: translate(0,-15%);" data-top="transform: translate(0,15%);" class="valley"></div>
+          <div id="valley-5" data-smooth-scrolling="off" data-start="transform: translate(0,-12%);" data-top="transform: translate(0,12%);"class="valley"></div>
+          <div id="valley-4" data-smooth-scrolling="off" data-start="transform: translate(0,-9%);" data-top="transform: translate(0,9%);"class="valley"></div>
+          <div id="valley-3" data-smooth-scrolling="off" data-start="transform: translate(0,-6%);" data-top="transform: translate(0,6%);"class="valley"></div>
+          <div id="valley-2" data-smooth-scrolling="off" data-start="transform: translate(0,-3%);" data-top="transform: translate(0,3%);"class="valley"></div>
+          <div id="valley-1" class="valley"></div>
+        </div>-->
+
+        <div id="valley-wrapper" class="valley">
+          <div id="valley-6" class="valley"></div>
+          <div id="valley-5" class="valley"></div>
+          <div id="valley-4" class="valley"></div>
+          <div id="valley-3" class="valley"></div>
+          <div id="valley-2" class="valley"></div>
           <div id="valley-1" class="valley"></div>
         </div>
 
