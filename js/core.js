@@ -14,11 +14,32 @@ var text1, text2, font;
 
 $(function() {
 
-  	// Initialise JS for current browser
-  	initPage();
+	resizeContainers();
 
-  	// Init 3D Text Effects
-  	init3DText();
+	// Check for WebGL
+
+	if (!window.WebGLRenderingContext)
+	{
+		// the browser doesn't even know what WebGL is
+		//window.location = "http://get.webgl.org";
+		initPageNoWebGL();
+	} else
+	{
+		var canvas = document.getElementById("canvas-test");
+    	//var ctx = canvas.getContext("webgl");
+    	var ctx = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+    	console.dir(ctx);
+    	if (!ctx)
+    	{
+			initPageWebGLProblem();
+		}
+		else 
+		{
+			initPage();
+			init3DText();
+		}
+	}
+
 
   	// Initialise scroller library
 	var s = skrollr.init({
@@ -29,41 +50,7 @@ $(function() {
         }
     });
 
-  	$(document).scroll(function() {
-  		var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-  		var scrollLimit = Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight ) - window.innerHeight;
-  		var scrollLimit = $('#text-wrapper').height() * 1.2;
-  		console.log(scrollLimit);
-  		scrollPercent = (scrollTop / scrollLimit) * 100;
-  		if(scrollPercent < 0) {
-  			scrollPercent = 0;
-  		}
-  		else if (scrollPercent > 100) {
-  			scrollPercent = 100;
-  		}
-  		console.log(scrollTop + " / " + scrollLimit + " * 100 = " + scrollPercent);
-  		update();
-
-  		var opacity = $('#text-wrapper .text-inner').css('opacity');
-  		var margin_top_max = -80;
-  		var margin_top = margin_top_max * (1 - opacity);
-  		$('#text-wrapper .text-inner h1').css('margin-top', margin_top + "px");
-  		console.log(opacity);
-
-  		// 
-  		checkEditAllow(scrollTop);
-	});
-
-	$(document).click(function() {
-
-	});
-
-
     $(window).resize(function() {
-      //scene1.resize();
-      line1.resize();
-      line2.resize();
-
       resizeContainers()
     });
 
@@ -77,6 +64,9 @@ function initPage() {
 	text1 = $('#ThreeD-1').text();
 	text2 = $('#ThreeD-2').text();
 	font = "lato";
+
+	// Remove No-WebGL section
+	$('#text-no-webgl').remove();
 
 	// Add Listeners
 	addSettingsListeners();
@@ -113,6 +103,36 @@ function addSettingsListeners() {
 		clickEditSubmit();
 		return false;
 	});
+
+	// Add scroll listener
+	$(document).scroll(function() {
+  		var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+  		var scrollLimit = $('#text-wrapper').height() * 1.2;
+  		scrollPercent = (scrollTop / scrollLimit) * 100;
+
+  		if(scrollPercent < 0) {
+  			scrollPercent = 0;
+  		}
+  		else if (scrollPercent > 100) {
+  			scrollPercent = 100;
+  		}
+
+  		update();
+
+  		var opacity = $('#text-wrapper .text-inner').css('opacity');
+  		var margin_top_max = -80;
+  		var margin_top = margin_top_max * (1 - opacity);
+  		$('#text-wrapper .text-inner h1').css('margin-top', margin_top + "px");
+  		console.log(opacity);
+
+  		checkEditAllow(scrollTop);
+	});
+
+	// Add resize listener to deal with Line adjustments.
+	$(window).resize(function() {
+      line1.resize();
+      line2.resize();
+    });
 }
 
 function clickOpenSettings() {
@@ -195,11 +215,26 @@ function resizeContainers() {
   	$('#content-wrapper').height($('#content').height());
 }
 
-function update() {
-  	//scene1.update(scrollPercent);
-  	//scene2.update(scrollPercent);
+function update()
+{
   	line1.update(scrollPercent);
   	line2.update(scrollPercent);
+}
+
+function initPageNoWebGL() 
+{
+	$('#text-wrapper').remove()
+	$('#edit-wrapper').remove()
+	$('#text-no-webgl p').html("I'm really sorry but unfortunately this is so cutting edge that sadly your web browser isn't capable of displaying it.  Fear not, most current versions of desktop browsers <a href='http://get.webgl.org'>support WebGL</a> and mobile browsers will have support soon. If you are completely stuck then you should go and play <a href='http://www.monumentvalleygame.com'>Monument Valley</a> until the world catches up.")
+	$('#text-no-webgl').css('display', 'block');
+}
+
+function initPageWebGLProblem() 
+{
+	$('#text-wrapper').remove();
+	$('#edit-wrapper').remove();
+	$('#text-no-webgl p').html("Hmm, it seems like WebGL is available but not working correctly in your browser. Let's try and <a href='http://get.webgl.org/troubleshooting'>solve the issue!</a>");
+	$('#text-no-webgl').css('display', 'block');
 }
 
 

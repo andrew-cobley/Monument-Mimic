@@ -93,39 +93,39 @@ input[type=submit], input[type=button] {
   text-align: center;
   text-transform: uppercase; }
 
-#content-wrapper {
+#content-wrapper, #text-no-webgl {
   color: rgba(240, 240, 240, 0.9); }
-  #content-wrapper h1, #content-wrapper h2, #content-wrapper span.pre-title, #content-wrapper a.button, #content-wrapper a.button:visited, #content-wrapper span.legal {
+  #content-wrapper h1, #content-wrapper h2, #content-wrapper span.pre-title, #content-wrapper a.button, #content-wrapper a.button:visited, #content-wrapper span.legal, #text-no-webgl h1, #text-no-webgl h2, #text-no-webgl span.pre-title, #text-no-webgl a.button, #text-no-webgl a.button:visited, #text-no-webgl span.legal {
     margin: 0 auto;
     font-family: 'Roboto Slab', serif;
     text-transform: uppercase; }
-  #content-wrapper span.sub-intro, #content-wrapper p {
+  #content-wrapper span.sub-intro, #content-wrapper p, #text-no-webgl span.sub-intro, #text-no-webgl p {
     font-family: 'Lato', sans-serif;
     font-weight: 300; }
-  #content-wrapper h1 {
+  #content-wrapper h1, #text-no-webgl h1 {
     font-size: 1.75em;
     font-weight: 400;
     line-height: 1.75em;
     letter-spacing: 0.375em; }
-  #content-wrapper h2 {
+  #content-wrapper h2, #text-no-webgl h2 {
     font-size: 1em;
     font-weight: 300;
     line-height: 2em;
     letter-spacing: 0.25em;
     max-width: 20em; }
-  #content-wrapper span.pre-title, #content-wrapper a.button, #content-wrapper a.button:visited {
+  #content-wrapper span.pre-title, #content-wrapper a.button, #content-wrapper a.button:visited, #text-no-webgl span.pre-title, #text-no-webgl a.button, #text-no-webgl a.button:visited {
     font-size: 0.875em;
     font-weight: 300;
     letter-spacing: 0.21875em; }
-  #content-wrapper span.pre-title {
+  #content-wrapper span.pre-title, #text-no-webgl span.pre-title {
     line-height: 1.75em; }
-  #content-wrapper span.sub-intro {
+  #content-wrapper span.sub-intro, #text-no-webgl span.sub-intro {
     font-size: 0.625em;
     font-weight: 300;
     line-height: 3.125em;
     letter-spacing: 0.125em;
     text-transform: uppercase; }
-  #content-wrapper a.button {
+  #content-wrapper a.button, #text-no-webgl a.button {
     margin: 16px auto;
     padding: 5px;
     width: 6em;
@@ -135,21 +135,21 @@ input[type=submit], input[type=button] {
     border-radius: 50%;
     border: 1px solid rgba(240, 240, 240, 0.9);
     transition: background 1s; }
-  #content-wrapper a.button:hover {
+  #content-wrapper a.button:hover, #text-no-webgl a.button:hover {
     background: rgba(67, 203, 187, 0.9); }
-  #content-wrapper p {
+  #content-wrapper p, #text-no-webgl p {
     margin-bottom: 1em;
     font-size: 1em;
     font-weight: 300;
     line-height: 1.5em;
     letter-spacing: 0.0625em;
     word-spacing: 0.125em; }
-    #content-wrapper p a, #content-wrapper p a:visited {
+    #content-wrapper p a, #content-wrapper p a:visited, #text-no-webgl p a, #text-no-webgl p a:visited {
       font-weight: 400;
       transition: color 1s; }
-    #content-wrapper p a:hover {
+    #content-wrapper p a:hover, #text-no-webgl p a:hover {
       color: rgba(67, 203, 187, 0.9); }
-  #content-wrapper span.legal {
+  #content-wrapper span.legal, #text-no-webgl span.legal {
     font-size: 0.625em;
     font-weight: 300;
     line-height: 3.125em;
@@ -249,11 +249,21 @@ div.wrapper {
 #effects-wrapper {
   position: relative; }
 
-#text-wrapper {
+#text-wrapper, #text-no-webgl {
   position: relative;
   margin: 0 auto;
   width: 100%;
   min-height: 480px; }
+
+#text-no-webgl {
+  display: none; }
+  #text-no-webgl canvas {
+    display: none; }
+  #text-no-webgl p {
+    margin: 0 auto;
+    padding: 16px;
+    max-width: 480px;
+    text-align: justify; }
 
 .text-inner {
   padding-top: 128px;

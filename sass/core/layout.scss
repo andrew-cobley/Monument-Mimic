@@ -126,12 +126,26 @@ div.wrapper
 	position: relative;
 }
 
-#text-wrapper
+#text-wrapper, #text-no-webgl
 {
 	position: relative;
 	margin: 0 auto;
 	width: 100%;
 	min-height: 480px;
+}
+
+#text-no-webgl
+{
+	display: none;
+	canvas {
+		display: none;
+	}
+	p {
+		margin: 0 auto;
+		padding: 16px;
+		max-width: 480px;
+		text-align: justify;
+	}
 }
 
 .text-inner
