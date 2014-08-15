@@ -241,7 +241,7 @@ function initPageNoWebGL()
 {
 	$('#text-wrapper').remove()
 	$('#edit-wrapper').remove()
-	$('#text-no-webgl p').html("I'm really sorry but unfortunately this is so cutting edge that sadly your web browser isn't capable of displaying it.  Fear not, most current versions of desktop browsers <a href='http://get.webgl.org'>support WebGL</a> and mobile browsers will have support soon. If you are completely stuck then you should go and play <a href='http://www.monumentvalleygame.com'>Monument Valley</a> until the world catches up.")
+	$('#text-no-webgl p').html("I'm really sorry but unfortunately this is so cutting edge that sadly your web browser isn't capable of displaying it.  Fear not, nearly all current versions of desktop browsers <a href='http://get.webgl.org'>support WebGL</a> and most mobile browsers will have support soon. If you are completely stuck then you should go and play <a href='http://www.monumentvalleygame.com'>Monument Valley</a> until the world catches up.")
 	$('#text-no-webgl').css('display', 'block');
 }
 
@@ -249,7 +249,7 @@ function initPageWebGLProblem()
 {
 	$('#text-wrapper').remove();
 	$('#edit-wrapper').remove();
-	$('#text-no-webgl p').html("Hmm, it seems like WebGL is not working correctly in your browser. Fear not, most current versions of desktop browsers <a href='http://get.webgl.org'>support WebGL</a> and mobile browsers will have support soon. Let's try and <a href='http://get.webgl.org/troubleshooting'>solve the issue!</a>");
+	$('#text-no-webgl p').html("Hmm, sadly WebGL is not working correctly in your browser. Fear not, nearly all current versions of desktop browsers <a href='http://get.webgl.org'>support WebGL</a> and most mobile browsers will have support soon. Let's try and <a href='http://get.webgl.org/troubleshooting'>solve the issue!</a>");
 	$('#text-no-webgl').css('display', 'block');
 }
 
