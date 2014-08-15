@@ -109,7 +109,7 @@ input[type=submit], input[type=button] {
 		font-weight: 300;
 		line-height: em($size * 2);
 		letter-spacing: em($size / 4);
-		max-width: em($size * 20);
+		max-width: em($size * 15);
 	}
 	span.pre-title, a.button, a.button:visited {
 		$size: 14;
