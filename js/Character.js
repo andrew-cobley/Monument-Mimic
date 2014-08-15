@@ -25,10 +25,10 @@ Character.prototype.init = function(parent,char,settings,posX,ratio) {
 
     console.log(this.settings);
 
-    this.font_family = font;
+    this.font_family = this.settings.font;
     //this.font_family = 'montserrat';
-    this.font_size = 100 * ratio;
-    this.thickness = Math.ceil(8 * ratio);
+    this.font_size = this.settings.size * ratio;
+    this.thickness = Math.ceil(this.settings.thickness * ratio);
 
     this.params = {};
 

@@ -7,6 +7,7 @@ effect_settings['lato'] = {
 	font: 'lato',
 	weight: 'normal',
 	size: 100,
+	thickness: 8,
 	options: {
 		'splitYMiddleX' : { split: {x: 0, y: 41, z: 0} },
 		'splitMiddleX' : { split: {x: 0, y: 50, z: 0} },
@@ -53,6 +54,7 @@ effect_settings['roboto slab'] = {
 	font: 'roboto slab',
 	weight: 'normal',
 	size: 100,
+	thickness: 8,
 	options: {
 		'splitYMiddleX' : { split: {x: 0, y: 41, z: 0} },
 		'splitMiddleX' : { split: {x: 0, y: 50, z: 0} },
@@ -97,5 +99,53 @@ effect_settings['roboto slab'] = {
 		'X': 'splitBottomX',
 		'Y': 'rotateMiddleY',
 		'Z': 'rotateDiag'
+	}
+};
+
+effect_settings['finger five'] = {
+	font: 'finger five',
+	weight: 'normal',
+	size: 70,
+	thickness: 20,
+	options: {
+		'splitTopX' : { split: {x: 0, y: 79.95, z: 0} },
+		'splitMiddleX' : { split: {x: 0, y: 50, z: 0} },
+		'splitBottomX' : { split: {x: 0, y: 20.05, z: 0} },
+		'splitLeftY' : { split: {x: 33.5, y: 0, z: 0} },
+		'splitMiddleLeftY' : { split: {x: 50, y: 0, z: 0} },
+		'splitMiddleY' : { split: {x: 50, y: 0, z: 0} },
+		'splitMiddleRightY' : { split: {x: 50, y: 0, z: 0} },
+		'splitRightY' : { split: {x: 66.5, y: 0, z: 0} },
+		'rotateMiddleX' : { rotation: {r0: {x: 0, y: 0, z: 0}, r1: {x: Math.PI/2, y: 0 , z: 0}} },
+		'rotateMiddleY' : { rotation: {r0: {x: 0, y: 0, z: 0}, r1: {x: 0, y: Math.PI/2 , z: 0}} }
+	},
+	characters: {
+		'default': 'splitMiddleX',
+		'A': 'splitTopX',
+		'B': 'splitBottomX',
+		'C': 'splitMiddleX',
+		'D': 'splitLeftY',
+		'E': 'rotateMiddleX',
+		'F': 'splitLeftY',
+		'G': 'splitTopX',
+		'H': 'rotateMiddleX',
+		'I': 'splitMiddleX',
+		'J': 'rotateMiddleY',
+		'K': 'rotateMiddleY',
+		'L': 'splitBottomX',
+		'M': 'splitTopX',
+		'N': 'splitTopX',
+		'O': 'splitMiddleX',
+		'P': 'splitLeftY',
+		'Q': 'splitBottomX',
+		'R': 'splitLeftY',
+		'S': 'splitRightY',
+		'T': 'splitTopX',
+		'U': 'rotateMiddleY',
+		'V': 'rotateMiddleX',
+		'W': 'splitBottomX',
+		'X': 'splitMiddleY',
+		'Y': 'rotateMiddleY',
+		'Z': 'rotateMiddleX'
 	}
 };
