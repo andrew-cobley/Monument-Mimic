@@ -23,10 +23,7 @@ Character.prototype.init = function(parent,char,settings,posX,ratio) {
 
     this.color = 0xF7F7EB;
 
-    console.log(this.settings);
-
     this.font_family = this.settings.font;
-    //this.font_family = 'montserrat';
     this.font_size = this.settings.size * ratio;
     this.thickness = Math.ceil(this.settings.thickness * ratio);
 
@@ -55,8 +52,6 @@ Character.prototype.setupBaseChar = function() {
 Character.prototype.setupParams = function() {
   
   var options = this.getOptions();
-
-  console.dir(options);
     
   if (options.split !== undefined) {
     this.params['split'] = options.split;
@@ -74,9 +69,7 @@ Character.prototype.getOptions = function() {
   var option = characters['default'];
 
   for (var index in characters) {
-    //console.log(index);
     if (index === this.char) {
-      console.log(index);
       var option = options[characters[index]];
       break;
     }

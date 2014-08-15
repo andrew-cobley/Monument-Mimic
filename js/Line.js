@@ -77,7 +77,7 @@ Line.prototype.setupContent = function() {
     character.init(this, this.content.charAt(i), this.settings, offsetX, ratio);
     this.characters.push(character);
 
-    console.log(">>> CHAR = " + character.char + " X = " + character.group.position.x + " , W = " + character.x + " , P = " + character.mesh.position.x);
+    //console.log(">>> CHAR = " + character.char + " X = " + character.group.position.x + " , W = " + character.x + " , P = " + character.mesh.position.x);
 
     this.group.add(character.group);
     offsetX += character.box.max.x + spacing;

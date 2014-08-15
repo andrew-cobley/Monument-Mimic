@@ -4,14 +4,8 @@
  * Copyright 2014, Andrew Cobley
  */
 
-var scene1, scene2;
-var line1, line2;
-var lineTest;
-var word_scene;
+var line1, line2, text1, text2, font;
 var scrollPercent = 0;
-
-var text1, text2, font;
-
 var valleys = ['valley-1','valley-2','valley-3','valley-4','valley-5','valley-6'];
 
 $(function() {
@@ -26,14 +20,11 @@ $(function() {
 	if (!window.WebGLRenderingContext)
 	{
 		// the browser doesn't even know what WebGL is
-		//window.location = "http://get.webgl.org";
 		initPageNoWebGL();
 	} else
 	{
 		var canvas = document.getElementById("canvas-test");
-    	//var ctx = canvas.getContext("webgl");
     	var ctx = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
-    	console.dir(ctx);
     	if (!ctx)
     	{
 			initPageWebGLProblem();
@@ -44,7 +35,6 @@ $(function() {
 			init3DText();
 		}
 	}
-
 
   	// Initialise scroller library
 	var s = skrollr.init({
@@ -92,7 +82,6 @@ function checkIfTextFade() {
   	var margin_top_max = -80;
   	var margin_top = margin_top_max * (1 - opacity);
   	$('#text-wrapper .text-inner h1').css('margin-top', margin_top + "px");
-  	console.log(opacity);
 }
 
 function addSettingsListeners() {
@@ -158,7 +147,6 @@ function scrollUpdateValleys(scroll)
   				var max = parseInt(v.data('p-max'));
   				var min = parseInt(v.data('p-min'));
   				var bounds =  Math.abs(max) + Math.abs(min);
-  				console.log(bounds);
 
   				var y = (max > min) ? max - (bounds * valleyPercent) : max + (bounds * valleyPercent);
 		
@@ -175,7 +163,6 @@ function scrollUpdateTextEffects(scrollPercent)
 }
 
 function clickOpenSettings() {
-	console.log("Open Settings");
 	$('#text1').val(text1);
 	$('#text2').val(text2);
 	
@@ -186,7 +173,6 @@ function clickOpenSettings() {
 }
 
 function clickEditSubmit() {
-	console.log("Submit Edit");
 
 	// Update variables for Text and Font
 	text1 = $('#text1').val();
@@ -208,7 +194,6 @@ function clickEditSubmit() {
 }
 
 function clickEditCancel() {
-	console.log("Cancel Edit");
 	$('#edit-wrapper').fadeOut();
 }
 
@@ -241,9 +226,7 @@ function resizeContainers() {
 	// Resize valleys to maintain aspect ratio
 	var el = $('div#valley-1');
 	var ratio = el.width() / parseInt( el.css('max-width') );
-	console.log(el.width());
   	var height = parseInt(el.css('max-height')) * ratio;
-  	console.log(height);
   	$('div.valley').height(height);
 
   	// Update content-wrapper height to mimic content height.
@@ -266,7 +249,7 @@ function initPageWebGLProblem()
 {
 	$('#text-wrapper').remove();
 	$('#edit-wrapper').remove();
-	$('#text-no-webgl p').html("Hmm, it seems like WebGL is available but not working correctly in your browser. Let's try and <a href='http://get.webgl.org/troubleshooting'>solve the issue!</a>");
+	$('#text-no-webgl p').html("Hmm, it seems like WebGL is not working correctly in your browser. Fear not, most current versions of desktop browsers <a href='http://get.webgl.org'>support WebGL</a> and mobile browsers will have support soon. Let's try and <a href='http://get.webgl.org/troubleshooting'>solve the issue!</a>");
 	$('#text-no-webgl').css('display', 'block');
 }
 
