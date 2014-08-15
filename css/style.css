@@ -182,6 +182,9 @@ body {
   background-position: 50% 0%;
   background-attachment: fixed; }
 
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
 .preload * {
   -webkit-transition: none !important;
   -moz-transition: none !important;
@@ -387,6 +390,7 @@ hr {
       margin: 0 auto;
       max-width: 540px;
       text-align: center;
+      display: block;
       color: rgba(240, 240, 240, 0.9); }
     #content-wrapper #content header {
       text-align: center; }
