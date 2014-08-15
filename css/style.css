@@ -82,8 +82,9 @@ input[type=text], select {
   color: rgba(240, 240, 240, 0.9); }
 
 input[type=submit], input[type=button] {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'lato', serif;
   font-size: 0.75em;
+  font-weight: 400;
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
@@ -91,10 +92,11 @@ input[type=submit], input[type=button] {
 
 #effects-wrapper h1 {
   font-family: 'Lato', sans-serif;
-  font-size: 5em;
+  font-size: 8em;
   font-weight: 300;
   letter-spacing: 0.125em;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: rgba(240, 240, 240, 0.9); }
 
 .button, .button:visited {
   font-family: 'Lato', sans-serif;
@@ -117,7 +119,7 @@ input[type=submit], input[type=button] {
     font-size: 1.75em;
     font-weight: 400;
     line-height: 1.75em;
-    letter-spacing: 0.375em; }
+    letter-spacing: 0.25em; }
   #content-wrapper h2, #text-no-webgl h2 {
     font-size: 1em;
     font-weight: 300;
@@ -132,7 +134,7 @@ input[type=submit], input[type=button] {
     line-height: 1.75em; }
   #content-wrapper span.sub-intro, #text-no-webgl span.sub-intro {
     font-size: 0.625em;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 3.125em;
     letter-spacing: 0.125em;
     text-transform: uppercase; }
@@ -202,6 +204,28 @@ div.wrapper {
   background-color: rgba(67, 203, 187, 0.9);
   opacity: 1; }
 
+.divide {
+  margin: 0 auto;
+  padding: 0.5em 0;
+  width: 100%;
+  height: 30px;
+  background: url("../img/divide.png") no-repeat;
+  background-position: 50% top; }
+
+.divide:first-of-type {
+  padding-bottom: 1.5em; }
+
+.divide:last-of-type {
+  padding-top: 1.5em;
+  transform: scaleY(-1); }
+
+hr {
+  margin-top: 2em;
+  width: 2.5em;
+  height: 1px;
+  border: 0;
+  background: rgba(240, 240, 240, 0.9); }
+
 .edit.button {
   opacity: 0; }
 
@@ -225,7 +249,7 @@ div.wrapper {
     border-radius: 0.5em;
     color: rgba(240, 240, 240, 0.9); }
     #edit-wrapper .edit-inner form .group {
-      padding-bottom: 1em;
+      padding: 0.5em 0;
       width: 100%;
       text-align: center; }
     #edit-wrapper .edit-inner form label {
@@ -236,23 +260,26 @@ div.wrapper {
     #edit-wrapper .edit-inner form input[type=text], #edit-wrapper .edit-inner form select {
       margin: 0.5em 0;
       width: 100%;
+      height: 2em;
       line-height: 2em;
       box-sizing: border-box;
       background: none;
       border-radius: 5px;
       border: 1px solid rgba(240, 240, 240, 0.9); }
     #edit-wrapper .edit-inner form select {
-      height: 2em; }
+      padding: 0; }
       #edit-wrapper .edit-inner form select option {
-        text-align: center; }
+        text-align: center;
+        padding-top: 0.5em;
+        height: 2em; }
     #edit-wrapper .edit-inner form input[type=submit], #edit-wrapper .edit-inner form input[type=button] {
       margin: 1.5em;
       width: 6.5em;
       height: 6.5em;
-      line-height: 5em;
+      line-height: 5.5em;
       text-align: center;
       border-radius: 50%;
-      border: 1px solid rgba(240, 240, 240, 0.9);
+      border: 2px solid rgba(240, 240, 240, 0.9);
       background: none;
       transition: background-color 1s; }
     #edit-wrapper .edit-inner form input[type=submit]:hover {
