@@ -68,6 +68,10 @@ function initPage() {
 	text2 = $('#ThreeD-2').text();
 	font = "lato";
 
+	//text1 = "NOPQRST";
+	//text2 = "UVWXYZ";
+	//font = "roboto slab";
+
 	// Remove No-WebGL section
 	$('#text-no-webgl').remove();
 
