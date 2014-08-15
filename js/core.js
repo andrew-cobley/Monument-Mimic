@@ -16,10 +16,13 @@ var valleys = ['valley-1','valley-2','valley-3','valley-4','valley-5','valley-6'
 
 $(function() {
 
+	// Stop initial transitions on page load.
+	$("body").removeClass("preload");
+
+	// Resize containers appropriate to browser.
 	resizeContainers();
 
 	// Check for WebGL
-
 	if (!window.WebGLRenderingContext)
 	{
 		// the browser doesn't even know what WebGL is

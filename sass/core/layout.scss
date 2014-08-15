@@ -17,6 +17,14 @@ body
 	background-attachment: fixed;
 }
 
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
 div.wrapper
 {
 	position: relative;
@@ -36,7 +44,7 @@ div.wrapper
 	display: block;
 	border-radius: 50%;
 	border: 2px solid $color-light;
-	transition: all 1s;
+	transition: background-color 1s;
 }
 
 .button:hover 
