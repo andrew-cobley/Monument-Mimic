@@ -113,7 +113,7 @@ function addSettingsListeners() {
   		}
 
   		// Run Update on Valleys
-  		//scrollUpdateValleys(scrollTop);
+  		scrollUpdateValleys(scrollTop);
   	
   		// Run Update on Text Effects
   		scrollUpdateTextEffects(scrollPercent);
